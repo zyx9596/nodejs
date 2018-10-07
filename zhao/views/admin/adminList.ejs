@@ -1,0 +1,45 @@
+<!-- 引入公有的头部 -->
+<% include header%>
+		
+    <!-- 管理的内容块 -->
+    <div class="tpl-content-wrapper">
+    	<!-- 路径导航 -->
+		<ol class="breadcrumb">
+		  <li><a href="#">栏目管理</a></li>
+		  <li class="active">栏目列表</li>
+		</ol>
+		<!-- 路径导航 end-->
+
+       	<!-- 数据 -->
+       	<div class="row">
+       		<div class="col-md-12">
+       			<table class="table table-hover">
+				  		<tr>
+				  			<th>账户名称</th>
+				  			<th>账户简介</th>
+				  			<th>手机号码</th>
+				  			<th>创建时间</th>
+							<th>操作</th>
+				  		</tr> 
+				  		<% datas.forEach(function(val){ %>
+					  		<tr>
+									<td><%= val.name %></td>
+									<td><%= val.info %></td>
+									<td><%= val.tel %></td>
+									<td><%= val.ctime.toLocaleString() %></td>
+									<td>
+										<a href="/admin/adminEdit/<%= val._id %>">编辑</a>
+										|
+										<a href="/admin/adminRemove/<%= val._id %>" onclick="return confirm('您确定要删除吗?')">删除</a>
+										
+									</td>
+								</tr>
+				  		<% }) %>
+						</table>
+       		</div>
+       	</div>
+    </div>
+     <!-- 管理的内容块  end-->
+
+<!-- 引入公有的底部 -->
+<% include footer%> 

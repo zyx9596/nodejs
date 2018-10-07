@@ -1,0 +1,107 @@
+<!-- 引入公有的头部 -->
+<% include header%>
+		
+    <!-- 管理的内容块 -->
+    <div class="tpl-content-wrapper">
+    	<!-- 路径导航 -->
+		<ol class="breadcrumb">
+		  <li><a href="#">文章管理</a></li>
+		  <li class="active">修改栏目</li>
+		</ol>
+		<!-- 路径导航 end-->
+
+       	<!-- 数据 -->
+		<!-- 单独修改封面的块 -->
+		<form class="form-horizontal articeUpdate" action="/admin/articleImgUpdate" method="post" enctype="multipart/form-data">
+     	<div class="row fengmian">
+     		<div class="col-md-3"></div>
+     		<div class="col-md-3 ">
+     					<img src="/<%= datas.imgurl %>" alt="">
+     		</div>
+       	<div class="col-md-4 btn-group center-block ">
+       		<input type="hidden" name="_id" value="<%= datas._id %>">
+       		<input type="file" class="articleImgbtn" name="imgurl">
+       		<button type="submit" class="btnUpdate btn btn-success successful">提交修改</button>
+       	</div>
+     	</div>
+    </form>
+		<!-- 单独修改封面的块  end-->
+
+		<!-- 修改文章内容的块 -->
+		
+   	<form class="form-horizontal itemForm" action="/admin/articleConUpdate" method="post" >
+     	<div class="row">
+       	<div class="col-md-4">
+					<div class="input-group">
+					  <span class="input-group-addon">文章分类</span>
+					  <select class="form-control" name="itemId">
+					  	<!-- 循环查询过来的数据 -->
+					  	<% items.forEach(function(val){ %>
+                <!-- 栏目数据库中的ID是对象要转化，之后去对比文章数据库中的数据 -->
+								<option <%=val._id.toString()==datas.itemId?'selected':''%> value="<%= val._id %>"><%= val.name %></option>
+					  	<% }) %>
+				  	</select>
+					</div>
+       	</div>
+       	<div class="col-md-4">
+     		<div class="input-group">
+			  <span class="input-group-addon">文章标题</span>
+			  <input type="text" class="form-control" name="title" value="<%= datas.title %>">
+				</div>	
+       	</div>
+       	<div class="col-md-4">
+       		<div class="input-group">
+				  <span class="input-group-addon">文章作者</span>
+				  <input type="text" class="form-control" name="author" value="<%= datas.author%>">
+				</div>
+				</div>
+       	<div class="col-md-4">
+					<div class="input-group">
+					  <span class="input-group-addon">关键字符</span>
+					  <input type="text" class="form-control" name="keywords"  value="<%= datas.keywords%>">
+					</div>
+       	</div>
+       	<div class="col-md-4">
+       		<div class="input-group">
+				  <span class="input-group-addon">文章描述</span>
+				  <input type="text" class="form-control" name="description"  value="<%= datas.description%>">
+					</div>	
+       	</div>
+       	<div class="col-md-4">
+       		<div class="input-group">
+				  <span class="input-group-addon">创建时间</span>
+				  <input type="text" class="form-control"  value="<%= datas.ctime.toLocaleString() %>" readonly>
+					</div>	
+       	</div>
+     		<!-- 内容框 -->
+   			
+     		<div class="col-md-12 ueditor">
+       		<textarea name="content" id="content" cols="30" rows="10">
+					<%= datas.content%>
+       		</textarea>
+     		</div>
+     	</div>
+      <input type="hidden" value="<%= datas._id%>" name="_id">
+     	<!-- 提交按钮 -->
+     	<div class="row">
+     		<div class="col-md-4"></div>
+       	<div class="col-md-4 btn-group center-block ">
+       		<button type="submit" class="anniu btn btn-success">修改文章</button>
+       	</div>
+     	</div>
+   	</form>
+		<!-- 修改文章内容的块  end-->
+
+     <!-- 管理的内容块  end-->
+		<!-- 配置文件 -->
+    <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
+    <script type="text/javascript">
+	    // 实例化编辑器 
+	    // 括号里面是放在哪个容器中
+        var ue = UE.getEditor('content');
+    </script>
+
+<!-- 引入公有的底部 -->
+<% include footer%> 

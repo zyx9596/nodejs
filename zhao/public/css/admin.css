@@ -1,0 +1,210 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+/*侧边栏的背景*/
+.leftbar{
+	background:#ccc;
+}
+
+
+/*输入框顶部距离*/
+.itemForm .input-group{
+	margin-top: 15px;
+}
+
+/*按钮居中*/
+.itemForm .center-block{
+	display: block;
+	margin-left:120px ;
+	margin-top: 30px;
+}
+.itemForm .center-block button{
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #333333;
+	font-size: 16px;
+	background: #009999;
+}
+
+/*富文本编辑器*/
+.biaoti{
+	text-align: center;
+}
+
+/* 文章列表的图片*/
+.articleList img{
+	height: 33px;
+	width: 55px;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: middle;
+    border-top: 1px solid #ddd;
+}
+
+
+
+/*文章修改页面的文件输入框*/
+.articleImgbtn{
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+
+/*修改封面的上传按钮*/
+.btnUpdate{
+	margin-top: 5px;
+	padding:3px 7px;
+}
+
+/*封面图片的大小*/
+.fengmian img{
+	height: 100px;
+	width: 150px;
+}
+.fengmian{
+	margin-bottom: 20px;
+}
+/*.ueditor{
+	margin-top: 20px;
+}*/
+
+
+
+/*验证码图片的大小*/
+.yanzm1{
+	width: 85px;
+	height: 32px;
+	padding: 0px 5px; 
+}
+
+
+/*登录界面*/
+.loginForm .input-group{
+	margin-top: 15px;
+}
+
+.loginForm .input-group input{
+	/*height: 25px;*/
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.input-group .form-control:last-child, .input-group-addon:last-child, .input-group-btn:first-child>.btn-group:not(:first-child)>.btn, .input-group-btn:first-child>.btn:not(:first-child), .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group>.btn, .input-group-btn:last-child>.dropdown-toggle {
+    border-top-right-radius: 6px;
+}
+
+.loginbtn{
+	margin-top: 20px;
+}
+
+/*后台首页的图片*/
+.adminImg{
+	display: block;
+	height: 300px;
+	width:100%;
+}
+
+.adminIndex{
+	margin: -10px 0 0px;
+	border:1px solid #aaa;
+	box-shadow: 1px 2px 3px;
+	width: 800px;
+	height: 310px;
+	float: left;
+	margin-left: 100px;
+	border-radius:10px;
+	background: white;
+	background: rgba(0,0,0,0.5);
+}
+.adminIndex #index_list{
+	float: left;
+	margin-left: 50px;
+}
+#index_list li h1{
+	color:#FF9900;
+	font-weight: bolder;
+}
+#index_list li span{
+	display: block;
+	color:white;
+	float: left;
+	width: 400px;
+	height: 200px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+#index_list li p{
+	display: block;
+	background: white;
+	width: 100px;
+	height: 30px;
+	float: left;
+	line-height: 30px;
+	font-weight: bold;
+	font-family: "微软雅黑";
+	text-align: center;
+	border-radius: 5px;
+
+}
+#index_list a{
+	text-decoration: none;
+	color:black;
+}
+
+/*全局样式*/
+body{
+	background-color: #5ea6eb;
+	background: url('/images/bj.jpg') center center no-repeat;
+	background-size: 100% 100%;
+}
+
+.tpl-left-nav-item .nav-link span, .tpl-left-nav-sub-menu a span {
+    font-size: 20px;
+    font-weight: 400;
+    color: #485a6a;
+}
+
+/*居中*/
+.juzhong{
+	text-align: center;
+}
+.juzhong h1{
+	display: block;
+	color: #009966;
+	/*font-size: 28px;*/
+	/*font-weight: bolder;*/
+	/*font-family: "微软雅黑";*/
+	/*font-stroke:10px red;*/
+}
+
+
+
+
+.myapp-login {
+    background: url('/css/images/01c1419d9f5345f8a0be7f6373c1b150.jpeg') 0 0 no-repeat;
+    background-size: 100%;
+    height: 100%;
+}
+
+
+/*添加栏目*/
+
+.input-group span{
+	background: #336666;
+	color: black;
+}
+
+/*顶部快捷导航*/
+.breadcrumb{
+	background: #666699;
+}
+.breadcrumb .active{
+	color: black;
+}
+
+.successful{
+	color: #333333;
+	background: #009999;
+}

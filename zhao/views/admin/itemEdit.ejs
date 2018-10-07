@@ -1,0 +1,45 @@
+<!-- 引入公有的头部 -->
+<% include header%>
+		
+    <!-- 管理的内容块 -->
+    <div class="tpl-content-wrapper">
+    	<!-- 路径导航 -->
+		<ol class="breadcrumb">
+		  <li><a href="#">栏目管理</a></li>
+		  <li class="active">修改栏目</li>
+		</ol>
+		<!-- 路径导航 end-->
+
+       	<!-- 数据 -->
+       	<div class="row">
+       		<div class="col-md-4"></div>
+       		<div class="col-md-4">
+       			<form class="form-horizontal itemForm" action="/admin/itemUpdateInsert" method="post">
+       				<input type="hidden" name="_id" value="<%= datas._id %>">
+					<div class="input-group">
+					  <span class="input-group-addon">栏目名称</span>
+					  <input type="text" class="form-control" name="name" value="<%= datas.name %>">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon">栏目简介</span>
+					  <input type="text" class="form-control" name="info" value="<%= datas.info %>">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon">栏目库存地址</span>
+					  <input type="text" class="form-control" name="router" value="<%= datas.router %>">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon">栏目排序</span>
+					  <input type="number" class="form-control" name="order" value="<%= datas.order %>">
+					</div>
+					<div class="btn-group center-block">
+					  <button type="submit" class="anniu btn btn-success">修改栏目</button>
+					</div>
+				</form>
+       		</div>
+       	</div>
+    </div>
+     <!-- 管理的内容块  end-->
+
+<!-- 引入公有的底部 -->
+<% include footer%> 

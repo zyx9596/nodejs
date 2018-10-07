@@ -1,0 +1,75 @@
+<!-- 引入公有的头部 -->
+<% include header%>
+		
+    <!-- 管理的内容块 -->
+    <div class="tpl-content-wrapper">
+    	<!-- 路径导航 -->
+		<ol class="breadcrumb">
+		  <li><a href="#">账户管理</a></li>
+		  <li class="active">添加管理</li>
+		</ol>
+		<!-- 路径导航 end-->
+
+       	<!-- 数据 -->
+       	<div class="row">
+       		<div class="col-md-4"></div>
+       		<div class="col-md-4">
+       			<form class="form-horizontal itemForm" action="/admin/adminInsert" method="post">
+							<div class="input-group">
+							  <span class="input-group-addon">管理账户</span>
+							  <input type="text" class="form-control" name="name">
+							</div>
+							<div class="input-group">
+							  <span class="input-group-addon">登录密码</span>
+							  <input type="password" class="form-control" name="password">
+							</div>
+							<div class="input-group">
+							  <span class="input-group-addon">确认密码</span>
+							  <input type="password" class="form-control" name="repassword">
+							</div>
+							<div class="input-group">
+							  <span class="input-group-addon">账户简介</span>
+							  <input type="text" class="form-control" name="info">
+							</div>
+							<div class="input-group">
+							  <span class="input-group-addon">手机号码</span>
+							  <input type="text" class="form-control" name="tel">
+							</div>
+							<div class="input-group">
+							  <span class="input-group-addon"> 验 &nbsp;证&nbsp; 码 </span>
+								<input class="form-control" type="text"  name="code">
+								<span class="input-group-addon yanzm1" id="basic-addon2">
+									<a href="/admin/adminAdd" class="yanzm2">
+										<img  src="/admin/code">
+									</a>
+								</span>
+							</div>	
+							<!-- Single button -->
+							<div class="btn-group center-block">
+							  <button type="submit" class="anniu btn btn-success">添加管理</button>
+							</div>
+						</form>
+       		</div>
+       	</div>
+    </div>
+     <!-- 管理的内容块  end-->
+     <script src="/js/jquery.1.12.4.min.js"></script>
+	<script>
+	var password = $('input[name=password]');
+	console.log(password);		
+	var repassword = $('input[name=repassword]');
+	console.log(repassword);		
+	// 重复密码失去焦点时
+	repassword.blur(function(){
+		if(password.val()==repassword.val()){
+			$(this).css('border','1px solid #e6e9e8');
+			password.css('border','1px solid #e6e9e8');
+		}else{
+			$(this).css('border','1px solid red');
+			password.css('border','1px solid red');
+			// alert('两次密码输入不一致,请重新输入!')
+		}
+	})
+</script>
+<!-- 引入公有的底部 -->
+<% include footer%> 

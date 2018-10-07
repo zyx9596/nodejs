@@ -1,0 +1,46 @@
+<!-- 引入公有的头部 -->
+<% include header%>
+		
+    <!-- 管理的内容块 -->
+    <div class="tpl-content-wrapper">
+    	<!-- 路径导航 -->
+		<ol class="breadcrumb">
+		  <li><a href="#">友链管理</a></li>
+		  <li class="active">添加友链</li>
+		</ol>
+		<!-- 路径导航 end-->
+
+       	<!-- 数据 -->
+       	<div class="row">
+       		<div class="col-md-4"></div>
+       		<div class="col-md-4">
+       			<form class="form-horizontal itemForm" action="/admin/linkUpload" method="post">
+							<div class="input-group">
+							  <span class="input-group-addon">链接名称</span>
+							  <input type="text" class="form-control" name="name" value="<%=links.name%>">
+							</div>
+							<div class="input-group">
+							  <span class="input-group-addon">链接简介</span>
+							  <input type="text" class="form-control" name="info"  value="<%=links.info%>">
+							</div>
+							<div class="input-group">
+							  <span class="input-group-addon">链接网址</span>
+							  <input type="text" class="form-control" name="http"  value="<%=links.http%>">
+							</div>
+							<div class="input-group">
+							  <span class="input-group-addon">链接排序</span>
+							  <input type="number" class="form-control" name="order"  value="<%=links.order%>">
+							</div>
+							    <input type="hidden" name="_id"  value="<%=links._id%>">
+							<!-- Single button -->
+							<div class="btn-group center-block">
+							  <button type="submit" class="anniu btn btn-success">修改链接</button>
+							</div>
+						</form>
+       		</div>
+       	</div>
+    </div>
+     <!-- 管理的内容块  end-->
+
+<!-- 引入公有的底部 -->
+<% include footer%> 

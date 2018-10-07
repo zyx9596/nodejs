@@ -1,0 +1,88 @@
+<!-- 引入公有的头部 -->
+<% include header%>
+		
+    <!-- 管理的内容块 -->
+    <div class="tpl-content-wrapper">
+    	<!-- 路径导航 -->
+		<ol class="breadcrumb">
+		  <li><a href="#">文章管理</a></li>
+		  <li class="active">添加文章</li>
+		</ol>
+		<!-- 路径导航 end-->
+
+       	<!-- 数据 -->
+
+       	<form class="form-horizontal itemForm" action="/admin/articleInsert" method="post" enctype="multipart/form-data">
+	       	<div class="row">
+		       	<div class="col-md-4">
+							<div class="input-group">
+							  <span class="input-group-addon">文章分类</span>
+							  <select class="form-control" name="itemId">
+							  	<!-- 循环查询过来的数据 -->
+							  	<% datas.forEach(function(val){ %>
+										<option value="<%= val._id %>"><%= val.name %></option>
+							  	<% }) %>
+						  		</select>
+							</div>
+		       	</div>
+		       	<div class="col-md-4">
+			       		<div class="input-group">
+							  <span class="input-group-addon">文章标题</span>
+							  <input type="text" class="form-control" name="title">
+								</div>	
+		       	</div>
+		       	<div class="col-md-4">
+			       		<div class="input-group">
+							  <span class="input-group-addon">文章作者</span>
+							  <input type="text" class="form-control" name="author">
+								</div>
+						</div>
+		       	<div class="col-md-4">
+							<div class="input-group">
+							  <span class="input-group-addon">关键字符</span>
+							  <input type="text" class="form-control" name="keywords">
+							</div>
+		       	</div>
+		       	<div class="col-md-4">
+			       		<div class="input-group">
+							  <span class="input-group-addon">文章描述</span>
+							  <input type="text" class="form-control" name="description">
+								</div>	
+		       	</div>
+		       	<div class="col-md-4">
+		       		<div class="input-group">
+						  <span class="input-group-addon">文章封面</span>
+						  <input type="file" class="form-control" name="imgurl">
+							</div>
+	       		</div>
+	       		<!-- 内容框 -->
+       			<div class="col-md-12 biaoti">
+       				<h2>文章内容</h2>
+       			</div>
+	       		<div class="col-md-12 ueditor">
+		       		<textarea name="content" id="content" cols="30" rows="10"></textarea>
+	       		</div>
+	       	</div>
+	       	<!-- 提交按钮 -->
+	       	<div class="row">
+	       		<div class="col-md-4"></div>
+		       	<div class="col-md-4 btn-group center-block ">
+		       		<button type="submit" class="anniu btn btn-success">添加文章</button>
+		       	</div>
+	       	</div>
+       	</form>
+
+
+     <!-- 管理的内容块  end-->
+		<!-- 配置文件 -->
+    <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
+    <script type="text/javascript">
+	    // 实例化编辑器 
+	    // 括号里面是放在哪个容器中
+        var ue = UE.getEditor('content');
+    </script>
+
+<!-- 引入公有的底部 -->
+<% include footer%> 

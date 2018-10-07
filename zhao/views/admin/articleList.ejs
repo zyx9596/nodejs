@@ -1,0 +1,105 @@
+<!-- 引入公有的头部 -->
+<% include header%>
+		
+    <!-- 管理的内容块 -->
+    <div class="tpl-content-wrapper">
+    	<!-- 路径导航 -->
+		<ol class="breadcrumb">
+		  <li><a href="#">文章管理</a></li>
+		  <li class="active">文章列表</li>
+		</ol>
+		<!-- 路径导航 end-->
+       	<!-- 数据 -->
+       	<div class="row">
+       		<div class="col-md-12">
+       			<table class="table table-hover articleList">
+				  		<tr>
+				  			<th>文章封面</th>
+				  			<th>文章标题</th>
+				  			<th>文章分类</th>
+				  			<th>创建时间</th>
+								<th>操作</th>
+				  		</tr> 
+				  		<% articles.forEach(function(val){ %>
+					  		<tr>
+					  			<td><img src="/<%= val.imgurl %>" alt=""></td>
+									<td><%= val.title %></td>
+									<td><%= val.itemId.name %></td>
+									<td><%= val.ctime.toLocaleString() %></td>
+									<td>
+										<a href="/admin/articleEdit/<%= val._id %>">编辑</a>
+										|
+										<a href="/admin/articleRemove/<%= val._id %>?page=<%=page%>" onclick="return confirm('您确定要删除吗?')">
+										删除
+										</a>
+									</td>
+								</tr>
+				  		<% }) %>
+						</table>
+       		</div>
+       	</div>
+
+       	<!-- 翻页 -->
+       	<div class="row">
+       		<div class="col-md-3"></div>
+       		<div class="col-md-6">
+       			<nav aria-label="Page navigation">
+						  <ul class="pagination">
+						  	<li>
+						      <a href="/admin/articleList?page=1" aria-label="Next">
+						        <span aria-hidden="true">首页</span>
+						      </a>
+						    </li>
+						    <li>
+						      <a href="/admin/articleList?page=<%=page -1%>" aria-label="Previous">
+						        <span aria-hidden="true">上一页</span>
+						      </a>
+						    </li>
+								<li class="first"><a href="/admin/articleList?page=<%= page-1 %>" class="firstPage"><%= page-1 %></a></li>
+								<li class="active"><a class="active" href="/admin/articleList?page=<%=page%>"><%= page %></a></li>
+								<li class="last"><a href="/admin/articleList?page=<%=-(-page-1)%>" class="lastPage"><%= -(-page-1) %></a></li>
+						    <li>
+						      <a href="/admin/articleList?page=<%=-(-page - 1)%>" aria-label="Next">
+						        <span aria-hidden="true">下一页</span>
+						      </a>
+						    </li>
+						    <li>
+						      <a href="/admin/articleList?page=<%=maxPage%>" aria-label="Next">
+						        <span aria-hidden="true">尾页</span>
+						      </a>
+						    </li>
+						  </ul>
+						</nav>
+       		</div>
+       	</div>
+       	<!-- 翻页  end -->
+    </div>
+     <!-- 管理的内容块  end-->
+<script>
+	//第一页的显示 
+	var firstPage = document.querySelector('.firstPage');
+	var	first = document.querySelector('.first');
+
+	console.log(firstPage.innerHTML)
+
+	// 最后一页
+	var  last = document.querySelector('.last');
+	var lastPage = document.querySelector('.lastPage');
+
+
+	
+	// 判断page值  等于0是隐藏前面的0 
+	if(firstPage.innerHTML == 0){
+		// 隐藏最前面的li
+		first.style.display = 'none';
+	}
+	
+	// 等于总page值是  隐藏最后的块
+	if(lastPage.innerHTML == <%=-(-maxPage-1)%>){
+		// 隐藏最后一个li
+		last.style.display = 'none';
+	}
+	
+</script>
+<!-- 引入公有的底部 -->
+<% include footer%> 

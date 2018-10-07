@@ -1,0 +1,45 @@
+<!-- 引入公共的头部内容 -->
+<% include header%>
+		
+    <!-- 管理的内容块 -->
+    <div class="tpl-content-wrapper">
+    	<!-- 顶部快速导航 -->
+		<ol class="breadcrumb">
+		  <li><a href="#">栏目管理</a></li>
+		  <li class="active">栏目列表</li>
+		</ol>
+		<!-- 顶部快速导航结束 END-->
+       	<!-- 数据 -->
+       	<div class="row">
+       		<div class="col-md-12">
+       			<table class="table table-hover">
+				  		<tr>
+				  			<th>排序</th>
+				  			<th>栏目名称</th>
+				  			<th>栏目简介</th>
+				  			<!-- <th>栏目路由</th> -->
+				  			<th>创建时间</th>
+								<th>操作</th>
+				  		</tr> 
+				  		<% items.forEach(function(val){ %>
+					  		<tr>
+									<td><%= val.order %></td>
+									<td><%= val.name %></td>
+									<td><%= val.info %></td>
+									<!-- <td><%= val.router %></td> -->
+									<td><%= val.ctime.toLocaleString() %></td>
+									<td>
+										<a href="/admin/itemEdit/<%= val._id %>">编辑</a>
+										|
+										<a href="/admin/itemRemove/<%= val._id %>?page=<%=page%>" onclick="return confirm('您确定要删除吗?')">删除</a>
+										
+									</td>
+								</tr>
+				  		<% }) %>
+						</table>
+       		</div>
+       	</div>
+    </div>
+     <!-- 管理的内容块  end-->
+<!--  -->
+<% include footer%> 

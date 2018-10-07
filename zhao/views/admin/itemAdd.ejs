@@ -1,0 +1,46 @@
+<!-- 引入公有的头部 -->
+<% include header%>
+		
+    <!-- 管理的内容块 -->
+    <div class="tpl-content-wrapper">
+    	<!-- 路径导航 -->
+		<ol class="breadcrumb">
+		  <li><a href="#">栏目管理</a></li>
+		  <li class="active">添加栏目</li>
+		</ol>
+		<!-- 路径导航 end-->
+
+       	<!-- 数据 -->
+       	<div class="row">
+       		<div class="col-md-4"></div>
+       		<div class="col-md-4">
+       			<form class="form-horizontal itemForm" action="/admin/itemInsert" method="post">
+							<div class="input-group">
+							  <span class="input-group-addon">栏目名称</span>
+							  <input type="text" class="form-control" name="name">
+							</div>
+							<div class="input-group">
+							  <span class="input-group-addon">栏目简介</span>
+							  <input type="text" class="form-control" name="info">
+							</div>
+							<div class="input-group">
+							  <span class="input-group-addon">栏目库存地址</span>
+							  <input type="text" class="form-control" name="router">
+							</div>
+							<div class="input-group">
+							  <span class="input-group-addon">栏目排序</span>
+							  <input type="number" class="form-control" name="order">
+							</div>
+							     
+							<!-- Single button -->
+							<div class="btn-group center-block" style="background: #009999;">
+							  <button type="submit" class="anniu btn btn-success">添加栏目</button>
+							</div>
+						</form>
+       		</div>
+       	</div>
+    </div>
+     <!-- 管理的内容块  end-->
+
+<!-- 引入公有的底部 -->
+<% include footer%> 

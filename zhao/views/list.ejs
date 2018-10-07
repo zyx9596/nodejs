@@ -1,0 +1,39 @@
+<% include header %>
+
+      <div class="col-me-12">
+        
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">文章列表</h3>
+          </div>
+          <div class="panel-body panel-content">
+            <% articles.forEach(function(article){ %>
+              <ul class="list-group">
+                <li class="list-group-item">
+
+                  <h4>分类:<%= article.itemId.name%></h4>
+                  <h4>文章标题:
+                  <a href="/details/<%= article._id%>">
+                    <%= article.title %>
+                  </a>
+                  </h4>
+                  <h4>文章作者:<%= article.author %></h4>
+                  <h4>关键字:<%= article.keywords %></h4>
+                  <h4 id="list_h4">封面<img src="/<%= article.imgurl %>" alt=""></h4>
+                  <h4>文章描述:<%= article.description %></h4>
+                  <p>上传日期:<%= article.ctime.toLocaleString()%></p>
+                  <p>
+                      文章内容:
+                        <%- article.content %>
+                      
+                  </p>
+
+                </li>
+              </ul>
+            <% }) %>
+            
+          </div>
+        </div>
+      </div>
+
+<% include footer %>

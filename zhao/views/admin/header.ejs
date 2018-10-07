@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>爱读书网</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="/assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="/assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="/assets/css/admin.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <script src="/assets/js/echarts.min.js"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- admin的css -->
+    <link rel="stylesheet" href="/css/admin.css">
+
+
+</head>
+
+<body data-type="index">
+    <!-- 头部导航 -->
+    <!-- <header class="am-topbar am-topbar-inverse admin-header">
+        <div class="am-topbar-brand">
+            <a href="javascript:;" class="tpl-logo">
+                文章网
+            </a>
+        </div>
+        <div class="am-icon-list tpl-header-nav-hover-ico am-fl am-margin-right">
+
+        </div>
+
+        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+        <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+            <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list">
+                <!- 管理员资料显示 -->
+                <!-- <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
+                    
+                    <ul class="am-dropdown-content">
+                        <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>
+                        <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+                        <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+                    </ul>
+                </li>
+                <li>
+                  <a href="/admin/adminOut" class="tpl-header-list-link">
+                    <span class="am-icon-sign-out tpl-header-list-ico-out-size">管理员退出</span>
+                  </a>
+                </li>
+            </ul>
+        </div> -->
+    <!-- </header> -->
+    <!-- 头部导航 end-->
+    <div class="juzhong">
+        <h1>爱读书，读好书的后台管理系统</h1>
+    </div>
+    <!-- 侧边栏  -->
+    <div class="tpl-page-container tpl-page-header-fixed">
+
+        <!-- 侧边栏导航块 -->
+        <div class="tpl-left-nav tpl-left-nav-hover leftbar">
+            <div class="tpl-left-nav-title">
+                管理列表
+            </div>
+            <div class="tpl-left-nav-list">
+                <ul class="tpl-left-nav-menu">
+                    <!-- 首页导航 -->
+                    <li class="tpl-left-nav-item">
+                        <a href="/admin" class="nav-link ">
+                            <i class="am-icon-home"></i>
+                            <span>首页</span>
+                        </a>
+                    </li>
+                     <!-- 首页导航  end-->
+
+                  
+                    <!-- 栏目管理 -->
+                    <li class="tpl-left-nav-item">
+                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                            <i class="am-icon-table"></i>
+                            <span>栏目管理</span>
+                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                        </a>
+                        <ul class="tpl-left-nav-sub-menu">
+                            <li>
+                                <a href="/admin/itemAdd">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>栏目添加</span>
+                                    
+                                </a>
+                                <a href="/admin/itemList">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>栏目列表</span>
+                                    
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 栏目管理  end -->
+                    
+                    <!-- 文章管理 -->
+                    <li class="tpl-left-nav-item">
+                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                            <i class="am-icon-table"></i>
+                            <span>文章管理</span>
+                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                        </a>
+                        <ul class="tpl-left-nav-sub-menu">
+                            <li>
+                                <a href="/admin/articleAdd">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>文章添加</span>
+                                    
+                                </a>
+                                <a href="/admin/articleList">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>文章列表</span>
+                                    
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 文章管理  end -->
+                    
+                    <!-- 友情链接 -->
+                    <li class="tpl-left-nav-item">
+                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                            <i class="am-icon-table"></i>
+                            <span>友情链接</span>
+                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                        </a>
+                        <ul class="tpl-left-nav-sub-menu">
+                            <li>
+                                <a href="/admin/linkAdd">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>添加链接</span>
+                                    
+                                </a>
+                                <a href="/admin/linkList">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>链接列表</span>
+                                    
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 友情链接  end -->
+
+                    <!-- 管理员 -->
+                    <li class="tpl-left-nav-item">
+                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                            <i class="am-icon-table"></i>
+                            <span>管理员选项</span>
+                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                        </a>
+                        <ul class="tpl-left-nav-sub-menu">
+                            <li>
+                                <a href="/admin/adminAdd">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>添加管理员</span>
+                                    
+                                </a>
+                                <a href="/admin/adminList">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>管理员列表</span>
+                                    
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 管理员  end -->
+                    <!-- 登录导航 -->
+                    <!-- <li class="tpl-left-nav-item">
+                        <a href="login.html" class="nav-link tpl-left-nav-link-list">
+                            <i class="am-icon-key"></i>
+                            <span>登录</span>
+                        </a>
+                    </li> -->
+                     <!-- 登录导航  end-->
+                     
+                </ul>
+            </div>
+        </div>
+        <!-- 侧边栏导航块  end-->

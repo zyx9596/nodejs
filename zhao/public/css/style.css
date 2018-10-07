@@ -1,0 +1,42 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#panel{
+	/*background: #993333;*/
+}
+#panel .first_a{
+	background:#663333;
+	color:#00CC00;
+	text-stroke:3px red;
+}
+
+#panel:hover{
+	transform:rotateY(360deg);
+	-webkit-transition:all 1s linear 0.1s;
+	/*border:2px dashed blue;*/
+}
+
+#scale{
+	font-size: 14px;
+	/*color: black;*/
+	width: 100px;
+	box-sizing: border-box;
+}
+#scale a{
+	color:#666666;
+}
+#scale:hover{
+	font-size: 16px;
+	color: #339966;
+	font-weight: bold;
+}
+
+#top_nav{
+	background: #CC9966;
+}

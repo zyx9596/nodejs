@@ -1,0 +1,22 @@
+<% include header%>
+
+        <!-- 内容 -->
+        <div class="row">
+          <% items.forEach(function(val,i){ %>
+            <div class="col-md-3" >
+              <div class="list-group" id="panel">
+                  <a  href="<%=val.router%>" class="list-group-item active first_a">
+                    <%= val.name %>
+                  </a>
+                  <% val.articleList.forEach(function(articles,i){ %>
+                    <a style="color:green" href="/details/<%= articles._id%>" class="list-group-item">
+                      <%= articles.title %>
+                    </a>
+                  <% })%>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+        <!-- 内容 end-->
+
+<% include footer %>

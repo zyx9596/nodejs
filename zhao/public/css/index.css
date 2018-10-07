@@ -1,0 +1,29 @@
+.body{
+	
+	background: url('/images/bj.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+
+/*内容页*/
+.list-grou-item h4{
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+}
+.list-grou-item h4 img{
+	width: 50px;
+	height: 50px;
+}
+
+
+/*列表页*/
+#list_h4{
+	width: 200px;
+	height: 100px;
+	overflow: hidden;
+}
+#list_h4 img{
+	width: 200px;
+	height: 100px;
+}
